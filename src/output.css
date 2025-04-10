@@ -211,6 +211,9 @@
   .table {
     display: table;
   }
+  .h-full {
+    height: 100%;
+  }
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
@@ -242,8 +245,14 @@
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .resize {
     resize: both;
+  }
+  .overflow-hidden {
+    overflow: hidden;
   }
   .rounded-md {
     border-radius: var(--radius-md);

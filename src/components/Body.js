@@ -15,9 +15,9 @@ const Body = () => {
     },
   ]);
   return (
-    <>
+    <div className="h-full w-full overflow-hidden">
       <RouterProvider router={appRouter} />
-    </>
+    </div>
   );
 };
 

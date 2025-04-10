@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 
 const Login = () => {
+  const [showSignInForm, setShowSignInForm] = useState(true);
+  const toggleSignInForm = () => {
+    setShowSignInForm(!showSignInForm);
+  };
   return (
     <div>
       <Header />
@@ -12,7 +16,16 @@ const Login = () => {
         />
       </div>
       <form className="absolute w-3/12 p-12 my-36 mx-auto right-0 left-0 bg-black text-white opacity-80">
-        <h1 className="font-bold text-3xl py-4 my-4">Sign In</h1>
+        <h1 className="font-bold text-3xl py-4 my-4">
+          {showSignInForm ? "Sign In" : "Sign Up"}
+        </h1>
+        {!showSignInForm && (
+          <input
+            type="text"
+            placeholder="Name "
+            className="bg-gray-700 text-white p-4 my-4 rounded-md w-full"
+          />
+        )}
         <input
           type="text"
           placeholder="Email or phone number"
@@ -24,8 +37,13 @@ const Login = () => {
           className="bg-gray-700 text-white p-4 my-4 rounded-md mt-4 w-full"
         />
         <button className="bg-red-600 text-white p-4 rounded-md my-6 w-full">
-          Sign In
+          {showSignInForm ? "Sign In" : "Sign Up"}
         </button>
+        <p className="py-4 underline cursor-pointer" onClick={toggleSignInForm}>
+          {showSignInForm
+            ? "New to Netflix? Sign Up Now"
+            : " Already a member? Sign In"}
+        </p>
       </form>
     </div>
   );
